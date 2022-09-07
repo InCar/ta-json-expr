@@ -1,0 +1,31 @@
+{
+    "$schema": "schema-fields.json",
+    "dataSources": {
+        "dsX": "mongodb://127.0.0.1:27017/myDb/myTable",
+        "dsY": "hbase://127.0.0.2:6000/myNamespace"
+    },
+    "fields": {
+        "vin": {
+            "data": "${dsX}/vin"
+        },
+        "tm": {
+            "data": "${dsX}/collectTime",
+            "desc": "采集时间",
+            "description": "数据的采样时间"
+        },
+        "vin2": {
+            "data": "${dsY}/vin_code",
+            "desc": "车架号"
+        },
+        "tmRecv": {
+            "data": "${dsY}/time_received",
+            "description": "车联网后端接收到数据的时间戳"
+        },
+        "gpsLon": {
+            "data": "${dsX}/Position_lng"
+        },
+        "gpsLat": {
+            "data": "${dsX}/Position_lat"
+        }
+    }
+}
