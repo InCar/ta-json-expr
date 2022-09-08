@@ -25,7 +25,3 @@ jobs:
             - name: Build with Gradle
               working-directory: ./java
               run: gradle build
-      
-            - name: Test with Gradle
-              working-directory: ./java
-              run: gradle test
