@@ -3,8 +3,7 @@
 name: Java CI with Gradle
 
 on:
-    pull_request:
-        types: [ opened, reopened ]
+    pull_request
 
 permissions:
     contents: read
@@ -25,7 +24,3 @@ jobs:
             - name: Build with Gradle
               working-directory: ./java
               run: gradle build
-      
-            - name: Test with Gradle
-              working-directory: ./java
-              run: gradle test

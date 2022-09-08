@@ -22,11 +22,7 @@ public class FieldsExpr{
             Schema schema = SchemaLoader.load(rawSchema);
             schema.validate(new JSONObject(json));
         }
-        catch(IOException ex) {
-            s_logger.warn("Validate json failed\n\t{}", ex.toString());
-            return false;
-        }
-        catch(ValidationException ex){
+        catch(IOException | ValidationException ex) {
             s_logger.warn("Validate json failed\n\t{}", ex.toString());
             return false;
         }
