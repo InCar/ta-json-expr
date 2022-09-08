@@ -1,0 +1,10 @@
+.idea
+.gradle
+
+build
+gradle
+
+gradlew*
+gradle.properties
+application-*.yml
+log4j2-*.xml
