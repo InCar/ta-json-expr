@@ -3,8 +3,7 @@
 name: Java CI with Gradle
 
 on:
-    pull_request:
-        types: [ opened, reopened ]
+    pull_request
 
 permissions:
     contents: read
