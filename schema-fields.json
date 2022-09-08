@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "title": "schema-fields",
+    "description": "数据源和字段的定义",
+    "type": "object",
+    "properties": {
+        "dataSources": {
+            "type": "object",
+            "description": "数据源定义,表示来自某个数据源一张表,表内部是一个个字段对应的数据"
+        },
+        "fields": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "required": ["data"],
+                "properties": {
+                    "data": {
+                        "type": "string",
+                        "description": "引用一个数据源中的一个字段"
+                    },
+                    "desc": {
+                        "type": "string",
+                        "description": "简要说明,会展示在用户界面上"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "详细说明,供用户理解此字段的含义"
+                    }
+                }
+            }
+        }
+    }
+}
