@@ -3,7 +3,6 @@ plugins{
 }
 
 repositories {
-    mavenCentral()
     if (project.hasProperty('maven') && maven == 'maven.aliyun.com')
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
     else
@@ -22,7 +21,7 @@ dependencies{
 }
 
 def copySchema = tasks.register('copySchema', Copy){
-    from "$rootDir/../schema-fields.json"
+    from "$projectDir/../schema-fields.json"
     into "$buildDir/resources/main"
 }
 
