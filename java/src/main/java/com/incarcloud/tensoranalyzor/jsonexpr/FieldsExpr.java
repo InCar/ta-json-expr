@@ -23,7 +23,7 @@ public class FieldsExpr{
      * 验证json是否符合schema
      */
     public static boolean Validate(String json){
-        try(InputStream schemaStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("./schema-fields.json")) {
+        try(InputStream schemaStream = FieldsExpr.class.getClassLoader().getResourceAsStream("schema-fields.json")) {
             JSONObject rawSchema = new JSONObject(new JSONTokener(schemaStream));
             Schema schema = SchemaLoader.load(rawSchema);
             schema.validate(new JSONObject(json));
